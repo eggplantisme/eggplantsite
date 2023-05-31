@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>舌尖上的生活</title>
+    <link rel="icon" href="{% static 'images/eggplant_128px_1150153_easyicon.net.ico' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/recipe.css' %}" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Food Life~</h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-3" id="myScrollspy">
+                <ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix" data-offset-top="125">
+                    <li class=""><a href="#section-1">Salami小披萨&鱼条</a></li>
+                    <li class=""><a href="#section-2">煮面条</a></li>
+                    <li class=""><a href="#section-3">火腿鸡蛋吐司</a></li>
+                    <li class=""><a href="#section-4">培根煎蛋</a></li>
+                    <li class=""><a href="#section-5">牛奶麦片</a></li>
+                    <li class=""><a href="#section-6">面包&榨菜&午餐肉&方便面</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9">
+                <h2 id="section-1">Salami小披萨&鱼条</h2>
+                <p>ALDI有一盒12个，一次吃4个可顶一顿早餐（三天早餐就可以糊弄过去了），在配点牛奶。实惠划算。超市冷冻柜里也有成盒的鱼条，可以早餐微波炉热一下吃。</p>
+                <hr>
+                <h2 id="section-2">煮面条</h2>
+                <p>热油，加入葱花（也可加入火腿碎，其他你想加的东西）。然后加入水，打入鸡蛋。待水开后加入面条。然后加入盐，味精调味。面条煮熟即可。</p>
+                <hr>
+                <h2 id="section-3">火腿鸡蛋吐司</h2>
+                <p>吐司面包夹上火腿，热油，下入鸡蛋，两面煎熟，然后放入吐司中。夹好放入面包机加热。加热完成就可以吃了。</p>
+                <hr>
+                <h2 id="section-4">培根煎蛋</h2>
+                <p>锅中少油，小火加入培根，煎至定型。碗中打入两个鸡蛋，倒入锅中，煎至定型。捞出。中途可一段时间内大火。</p>
+                <hr>
+                <h2 id="section-5">牛奶麦片</h2>
+                <p>牛奶加麦片，微波炉加热，记得别太满，会溢出来。</p>
+                <hr>
+                <h2 id="section-6">面包&榨菜&午餐肉&方便面</h2>
+                <p>懒人必备。</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    </body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eggplant</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/eggplant_128px_1150153_easyicon.net.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'live2d/css/live2d.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/APlayer.min.css' %}">
+    <script src="{% static 'js/APlayer.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script>
+        var static_Path = '{% static '' %}';
+        var home_Path = window.location.host;
+    </script>
+
+    {% block css_js_reference %}
+        {% load static %}
+	    <link rel="stylesheet" type="text/css" href="{% static 'css/cover.css' %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block mainbody %}
+
+    <div class="site-wrapper">
+        <nav class="navbar navbar-light navbar-fixed-top" role="navigation" style="background-color: rgb(255, 231, 179, 0.2);">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Eggplant</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="https://eggplantisme.github.io/">Blog</a></li>
+                    <li><a href="\network">Spectral</a></li>
+                    <li><a href="\recipe">Recipe</a></li>
+                    <li><a href="\album">Album</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- <div class="masthead">
+            <div class="inner">
+                <h3>Eggplant</h3>
+            </div>
+        </div> -->
+        <div class="cover">
+            <div class="inner">
+                <h1 class="cover-heading">Eggplant's World</h1>
+                <p class="lead">Today is a proper day.</p>
+            </div>
+        </div>
+        <!-- <div class="mastfoot">
+            <div class="inner">
+                <p>@Eggplant</p>
+            </div>
+        </div> -->
+    </div>
+    {% endblock %}
+    <!-- APlayer 播放器 -->
+    <div id="aplayer" style="display: none; color: #000;"></div>
+
+    <!-- live2d 参考
+    https://www.wikimoe.com/live2d-mashiro.html
+    https://github.com/galnetwen/Live2D
+    -->
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="live_talk_input_body">
+            <div class="live_talk_input_name_body">
+                <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+            </div>
+            <div class="live_talk_input_text_body">
+                <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+                <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+            </div>
+        </div>
+        <input name="live_talk" id="live_talk" value="1" type="hidden" />
+        <div class="live_ico_box">
+            <div class="live_ico_item type_info" id="showInfoBtn"></div>
+            <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+            <div class="live_ico_item type_huanzhuang" id="huanzhuangButton"></div>
+            <div class="live_ico_item type_music" id="musicButton"></div>
+            <div class="live_ico_item type_youdu" id="youduButton"></div>
+            <div class="live_ico_item type_quit" id="hideButton"></div>
+            <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+            <input id="duType" value="douqilai" type="hidden">
+        </div>
+    </div>
+    <div id="open_live2d">召唤看板娘</div>
+    <script>
+        var message_Path = '{% static 'live2d/' %}';
+    </script>
+    <script type="text/javascript" src="{% static 'live2d/js/live2d.js' %}"></script>
+    <script type="text/javascript" src="{% static 'live2d/js/message.js' %}"></script>
+    <script type="text/javascript">
+        loadlive2d("live2d", "{% static 'live2d/model/mashiro/seifuku.model.json' %}");
+        // loadlive2d("live2d", "{% static 'live2d/model/umaru/umaru.json' %}");
+        // loadlive2d("live2d", "{% static 'live2d/model/evergarden/violet.json' %}");
+    </script>
+</body>
+</html>
